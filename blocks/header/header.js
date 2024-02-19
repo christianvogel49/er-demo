@@ -4,6 +4,100 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+function appendRightNav() {
+  const html = `
+  <div class="navigation-wrap__icons-wrapper">
+    <div class="navigation-icon navigation-icon--action-item hidden-md">
+      <a
+        href="https://www.ergo.de/de/sonstige/suchergebnisse"
+        target="_self"
+        class="navigation-icon__link search"
+        aria-label="Suche"
+        title="Wonach suchen Sie?"
+      >
+        <span class="icon-bars" aria-hidden="true">
+          <img
+            viewbox="0 0 24 24"
+            src="https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/icons/SearchIcon.svg"
+            alt="SearchIcon"
+          />
+        </span>
+        <span class="navigation-main__extra-small-text">Suche</span>
+      </a>
+    </div>
+
+
+
+    <div class="navigation-icon navigation-icon--action-item hidden-md">
+      <a
+        href="https://www.ergo.de/de/Service/Vermittlersuche"
+        target="_self"
+        rel="nofollow"
+        class="navigation-icon__link agentSearch"
+        aria-label="Berater"
+        aria-haspopup="dialog"
+        title="ERGO Berater finden"
+      >
+        <span class="icon-bars" aria-hidden="true">
+          <img
+            viewbox="0 0 24 24"
+            src="https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/icons/LocationIcon.svg"
+            alt="LocationIcon"
+          />
+        </span>
+        <span class="navigation-main__extra-small-text">Berater</span>
+      </a>
+    </div>
+
+    <div class="navigation-icon navigation-icon--action-item">
+      <a
+        href="https://kunde-s.ergo.de/meineversicherungen/lz/start.aspx?vu=ergo"
+        target="_blank"
+        rel="nofollow"
+        class="navigation-icon__link login"
+        data-tracking-full-path="MN|Log-in"
+        aria-label="Log-in"
+        aria-haspopup="dialog"
+        title="Meine Versicherungen"
+      >
+        <span class="icon-bars" aria-hidden="true">
+          <img
+            viewbox="0 0 24 24"
+            src="https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/icons/ProfileIcon.svg"
+            alt="ProfileIcon"
+          />
+        </span>
+        <span class="navigation-main__extra-small-text">Log-in</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="navigation-divider"></div>
+  <div
+    class="navigation-icon navigation-icon--phone"
+    title="Telefonischer Beratungsservice"
+  >
+    <a
+      href="tel:0800 / 3746 208"
+      class="navigation-icon__link"
+      aria-label="Anrufen"
+    >
+      <span class="icon-bars" aria-hidden="true">
+        <div class="icon-phone"></div>
+      </span>
+      <span class="navigation-main__extra-small-text hidden-min-md"
+        >Anrufen</span
+      >
+      <div class="phone-text hidden-md">
+        <span class="phone-text__phonenumber hidden-sm">0800 / 3746 208</span>
+        <span class="phone-text__hours hidden-sm">7-24 Uhr (gebührenfrei)</span>
+      </div>
+    </a>
+  </div>
+`;
+  return html;
+}
+
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -145,4 +239,9 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  const navRight = document.createElement('div');
+  navRight.classList.add('section', 'nav-right');
+  navRight.innerHTML = appendRightNav();
+  nav.append(navRight);
 }

@@ -1,0 +1,80 @@
+.benefits-wrapper {
+
+  border-radius: 8px;
+}
+
+.benefits {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.benefits .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 32px;
+    position: relative;
+    transform: translateY(50%);
+    z-index: 1;
+}
+
+.benefits .title > div{
+    align-self: flex-end;
+    font-size: 14px;
+    background-color: #009284;
+    color: #fff;
+    display: -webkit-box;
+    line-height: 1.5;
+    margin: 0;
+    max-width: calc(100% - 64px);
+    padding: 4px 8px;
+    text-overflow: ellipsis;
+    border-radius: 8px;
+}
+
+
+.benefits .items-wrapper {
+    border: 1px solid #009284;
+    border-radius: 8px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.benefits .items-wrapper > div {
+    box-sizing: border-box;
+}
+
+.benefits .items-wrapper > div:not(:first-child) {
+    margin-top: 28px;
+}
+
+.benefits .items-wrapper .icon {
+    display: inline;
+}
+
+.benefits .items-wrapper p {
+    margin: 0;
+}
+
+.benefits .items-wrapper > div > div {
+    padding-left: 56px;
+    font-size: 16px;
+    gap: 12px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    line-height: 1.5;
+    position: relative;
+}
+
+.benefits .items-wrapper > div > div > p:first-child {
+    left: 10px;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 32px;
+    z-index: 1;
+    margin: 0;
+    top: -4px;
+}
