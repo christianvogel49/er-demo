@@ -1,0 +1,20 @@
+{
+    "project": "playground",
+    "plugins": [
+      {
+        "id": "generate-variations",
+        "title": "Generate Variations",
+        "url": "https://experience.adobe.com/aem/generate-variations",
+        "passConfig": true,
+        "environments": ["edit"],
+        "includePaths": ["**.docx**"]
+      },
+      {
+        "id": "library",
+        "title": "Library",
+        "environments": ["edit"],
+        "url": "/tools/sidekick/library.html",
+        "includePaths": ["**.docx**"]
+      }
+    ]
+  }
