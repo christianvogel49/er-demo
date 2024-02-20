@@ -16,13 +16,15 @@
   --link-hover-color: #136ff6;
   --background-color: white;
   --light-color: #eee;
+  --highlight-color: #e3f0e6;
   --dark-color: #ccc;
-  --text-color: black;
+  --text-color: #333333;
+  --text-highlight-color: #8e0038;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
+  --body-font-family: 'FS Me',Arial,Helvetica,sans-serif;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --fixed-font-family: 'FS Me',Arial,Helvetica,sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -31,14 +33,14 @@
 
   /* heading sizes */
   --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
+  --heading-font-size-xl: 28px;
   --heading-font-size-l: 32px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 94px;
 }
 
 @font-face {
@@ -51,7 +53,7 @@
 @media (width >= 900px) {
   :root {
     --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
+    --heading-font-size-xl: 28px;
     --heading-font-size-l: 36px;
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
@@ -60,7 +62,7 @@
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-xs);
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
@@ -187,24 +189,120 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  padding: 0px;
 }
 
 @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 0px;
   }
 }
 
 @media (width >= 900px) {
   .section > div {
-    max-width: 1200px;
+    max-width: 870px;
     margin: auto;
   }
 }
 
 /* section metadata */
-main .section.light,
-main .section.highlight {
+main .section.light {
   background-color: var(--light-color);
 }
+
+main .section.highlight .default-content-wrapper{
+  background-color: var(--highlight-color);
+  border-radius: 8px;
+  padding: 48px 32px;
+  box-sizing: border-box;
+}
+
+main .section.highlight .default-content-wrapper h2 {
+  margin-top: 0px;
+}
+
+main .section.highlight .default-content-wrapper ul {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+main .section.highlight .default-content-wrapper li {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 255.1 255.1' style='enable-background:new 0 0 255.1 255.1' xml:space='preserve'%3E%3Ccircle cx='127.1' cy='127.6' r='106.3' style='fill-rule:evenodd;clip-rule:evenodd;fill:%23009284'/%3E%3Cpath d='m172.8 74.4-64.7 90.2L82.4 135H63.3l35.3 41c2.5 2.9 6 4.6 9.9 4.6h.7c3.9-.4 7.8-2.5 9.9-5.7l71.7-100.6-18 .1z' style='fill-rule:evenodd;clip-rule:evenodd;fill:%23fff'/%3E%3C/svg%3E");
+  background-size: 24px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  margin: 0px 0px 12px 0px;
+  padding: 0px 0px 0px 36px;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* @font-face {
+  font-display: swap;
+  font-family: FS Me;
+  font-weight: 300;
+  src: local("FSMeWeb Light"), local("FSMeWeb-Light"),
+    url(https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/fonts/fsme/FSMeWeb-Light.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FS Me;
+  font-style: italic;
+  font-weight: 300;
+  src: local("FSMeWeb LightItalic"), local("FSMeWeb-LightItalic"),
+    url(https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/fonts/fsme/FSMeWeb-LightItalic.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FS Me;
+  font-weight: 500;
+  src: local("FSMeWeb Regular"), local("FSMeWeb-Regular"),
+    url(https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/fonts/fsme/FSMeWeb-Regular.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FS Me;
+  font-style: italic;
+  font-weight: 500;
+  src: local("FSMeWeb Italic"), local("FSMeWeb-Italic"),
+    url(https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/fonts/fsme/FSMeWeb-Italic.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FS Me;
+  font-weight: 700;
+  src: local("FSMeWeb Bold"), local("FSMeWeb-Bold"),
+    url(https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/fonts/fsme/FSMeWeb-Bold.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FS Me;
+  font-style: italic;
+  font-weight: 700;
+  src: local("FSMeWeb BoldItalic"), local("FSMeWeb-BoldItalic"),
+    url(https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/fonts/fsme/FSMeWeb-BoldItalic.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FS Me;
+  font-weight: 900;
+  src: local("FSMeWeb Heavy"), local("FSMeWeb-Heavy"),
+    url(https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/fonts/fsme/FSMeWeb-Heavy.woff)
+      format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: FS Me;
+  font-style: italic;
+  font-weight: 900;
+  src: local("FSMeWeb HeavyItalic"), local("FSMeWeb-HeavyItalic"),
+    url(https://www.ergo.de/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/fonts/fsme/FSMeWeb-HeavyItalic.woff)
+      format("woff");
+} */
