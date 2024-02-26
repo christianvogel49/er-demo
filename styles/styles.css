@@ -221,13 +221,13 @@ main .section.highlight .default-content-wrapper h2 {
   margin-top: 0px;
 }
 
-main .section.highlight .default-content-wrapper ul {
+main .section.highlight .default-content-wrapper ul, main .section.check-list .default-content-wrapper ul {
   list-style: none;
   list-style-image: none;
   margin: 0;
   padding: 0;
 }
-main .section.highlight .default-content-wrapper li {
+main .section.highlight .default-content-wrapper li, main .section.check-list .default-content-wrapper li {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 255.1 255.1' style='enable-background:new 0 0 255.1 255.1' xml:space='preserve'%3E%3Ccircle cx='127.1' cy='127.6' r='106.3' style='fill-rule:evenodd;clip-rule:evenodd;fill:%23009284'/%3E%3Cpath d='m172.8 74.4-64.7 90.2L82.4 135H63.3l35.3 41c2.5 2.9 6 4.6 9.9 4.6h.7c3.9-.4 7.8-2.5 9.9-5.7l71.7-100.6-18 .1z' style='fill-rule:evenodd;clip-rule:evenodd;fill:%23fff'/%3E%3C/svg%3E");
   background-size: 24px;
   background-position: 0 0;
