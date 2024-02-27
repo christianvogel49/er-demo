@@ -39,7 +39,7 @@ const createBenefits = (main, document) => {
     const benefitItems = benefits.querySelectorAll('.benefits__item');
 
     const cells = [
-      ['Benefit'],
+      ['Benefits'],
       [title],
     ];
 
@@ -54,18 +54,46 @@ const createBenefits = (main, document) => {
   });
 };
 
-const createCheckLists = (main, document) => {
+const createAccordion = (main, document) => {
+  const accordions = document.querySelectorAll('.accordion');
+
+  accordions.forEach((accordion) => {
+    const accordionItems = accordion.querySelectorAll('.cmp-accordion__item');
+
+    const cells = [
+      ['Accordion'],
+    ];
+
+    accordionItems.forEach((item) => {
+      const newArray = [];
+      const title = item.querySelector('h2');
+
+      newArray.push(title);
+      newArray.push(item);
+      cells.push(newArray);
+    });
+
+    const table = WebImporter.DOMUtils.createTable(cells, document);
+    accordion.replaceWith(table);
+  });
+};
+
+const addChecklistTable = (document, lists) => {
   const cells = [
     ['Section Metadata'],
     ['Style', 'check-list'],
   ];
-  const checkLists = document.querySelectorAll('ul.check-list');
-  checkLists.forEach((list) => {
+  lists.forEach((list) => {
     const section = list.parentNode.parentNode.parentNode;
     const table = WebImporter.DOMUtils.createTable(cells, document);
     section.append(table);
     section.after(document.createElement('hr'));
   });
+};
+
+const createCheckLists = (main, document) => {
+  addChecklistTable(document, document.querySelectorAll('ul.check-list'));
+  addChecklistTable(document, document.querySelectorAll('ul.check-list--green'));
 };
 
 export default {
@@ -95,6 +123,9 @@ export default {
       '.footer',
       'iframe',
       'noscript',
+      '.stickyfooter',
+      '.stickyFooterNewReact',
+      '.scrollToTop',
     ]);
 
     WebImporter.rules.createMetadata(main, document);
@@ -105,6 +136,7 @@ export default {
     createBanner(main, document);
     createCheckLists(main, document);
     createBenefits(main, document);
+    createAccordion(main, document);
     return main;
   },
 
