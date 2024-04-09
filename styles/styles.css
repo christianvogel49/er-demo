@@ -14,6 +14,7 @@
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
+  --link-button-color: #8e0038;
   --background-color: white;
   --light-color: #eee;
   --highlight-color: #e3f0e6;
@@ -146,7 +147,7 @@ a.button:any-link, button {
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--link-button-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;

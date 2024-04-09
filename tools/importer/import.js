@@ -13,13 +13,13 @@
 /* eslint-disable no-console, class-methods-use-this */
 
 const createBanner = (main, document) => {
-  const bannerImage = document.querySelector('.hero__image picture');
-  const bannerText = document.querySelector('.hero__content');
+  const bannerImage = document.querySelector('.cmp-hero__image picture');
+  const bannerText = document.querySelector('.cmp-hero__teaser');
 
   const h3 = document.createElement('h3');
   const p = bannerText.querySelector('p');
-  h3.textContent = p.textContent;
-  p.replaceWith(h3);
+  // h3.textContent = p.textContent;
+  // p.replaceWith(h3);
   const bannerPrice = document.querySelector('.price').parentNode;
   bannerText.append(bannerPrice);
 

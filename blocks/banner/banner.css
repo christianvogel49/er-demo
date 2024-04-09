@@ -6,7 +6,20 @@
     box-sizing: border-box;
 }
 
+.banner {
+    background-color: rgb(240, 196, 149);
+    #ccebed
+}
+
+.light-blue {
+    background-color: #ccebed !important;    
+}
+
 .banner, .banner > div {
+    justify-content: center;
+}
+
+.banner > div {
     width: 100%;
     display: flex;
 }
@@ -29,7 +42,6 @@
     -webkit-hyphens: auto;
     hyphens: auto;
     width: 100%;
-    background-color: rgb(240, 196, 149);
 }
 
 .columns-content-col h1 {
@@ -46,6 +58,14 @@
     margin-top: 0px;
 }
 
+.columns-content-col p {
+    font-size: 18px;
+}
+
+.columns-content-col p strong {
+    font-size: 40px;
+}
+
 .columns-content-col a.button {
     background: #8e0038;
     font-size: 16px;
@@ -58,7 +78,7 @@
 
 @media (min-width: 912px) {
     .columns-img-col, .columns-content-col {
-        width: 50%;
+        width: 40%;
         min-height: 360px;
     }
 
