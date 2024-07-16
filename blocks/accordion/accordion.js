@@ -18,7 +18,7 @@ export default function decorate(block) {
     if (!hasWrapper(summary)) {
       summary.innerHTML = `<p>${summary.innerHTML}</p>`;
     }
-    // decorate accordion item body
+    // decorate accordion item bodys
     const body = row.children[1];
     body.className = 'accordion-item-body';
     if (!hasWrapper(body)) {
